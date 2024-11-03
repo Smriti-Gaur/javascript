@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body>
+    <h1>Amazing Images</h1>
+    <div>
+        <ul id ="images">
+            <li><img width = "200px" id = "jupiter"
+            src="https://assets.iflscience.com/assets/articleNo/64985/iImg/61314/jupiter-auroras1.jpg" alt ="jupiter"></li>
+            
+        </ul>
+    </div>
+    <script>
+        // document.getElementById('jupiter').onclick =function(){
+        //     alert("jupiter clicked")
+        // }    // no problem but gives limited features
+        // document.getElementById('jupiter').addEventListner('click',function(){
+        //     alert("jupiter clicked again")
+        //})
+        //attachEvent
+        //jQuery-on
+
+        // document.getElementById('jupiter').addEventListner('click',function(e){
+        //     console.log(e);
+        // })
+        // type, timestamp,defaultPrevented
+        // target,toElement
+        //clientX,clientY,screenX ,screenY
+        //altKey,ctrlkey,shiftkey,keyCode
+
+        // Event capturing -- top to bottom , ul to image 
+        // Event propogation -- bottom to top
+        // e.stopPropogation()---- stop bubbling up 
+
+         document.getElementById('jupiter').addEventListner
+        ('click',function(e){
+            console.log("jupiter clicked")
+            e.preventDefault();
+        },false)
+
+        document.querySelector('#images').addEventListner('click',function(e){
+            console.log(e.target.tagName);
+            if(e.target.tagName==="jupiter"){
+                console.log(e.target.id)
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+            
+            //removeIt.parentNode.removeChild(removeIt)
+        })
+    </script>
+</body>
+</html>

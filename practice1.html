@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiples of 3</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        function printMultiplesOfThree() {
+            let resultString = "";
+            for (let i = 1; i <= 10; i++) {
+                resultString += i * 3 + "<br>";
+            }
+            document.getElementById("result").innerHTML = resultString;
+        }
+
+        printMultiplesOfThree();
+    </script>
+</body>
+</html>
