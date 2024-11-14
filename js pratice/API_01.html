@@ -11,18 +11,18 @@
     </h1>
 </body>
 <script>
-    const requesturl = 'https://github.com/Smriti-Gaur'
+    const requesturl = 'https://api.github.com/users/Smriti-Gaur'
     const xhr = new XMLHttpRequest();
-    xhr.open('GET',requesturl)
+    xhr.open('GET',requesturl);
+    xhr.send()
     xhr.onreadystatechange = function(){
         console.log(xhr.reeadyState);
         if (xhr.readyState === 4){
             const data =JSON.parse(this.responseText) ;
             console.log(data)
-            console.log(data.foloowers);
+            console.log(data.followers);
         }
     }
-    
     xhr.send();
 </script>
 </html>
